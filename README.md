@@ -34,6 +34,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 I experienced times where I followed the instructions in the videos and it did not work as intended. It might be because I am
 using a Windows computer. Overall, building the app was quite easy since there was a step by step video to follow. 
+I tried the optional challenges and could not figure it out. I hope to learn many new skills during the program.
 
 ## License
 
