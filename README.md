@@ -32,7 +32,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I experienced times where I followed the instructions in the videos and it did not work as intended. It might be because I am
+using a Windows computer. Overall, building the app was quite easy since there was a step by step video to follow. 
 
 ## License
 
