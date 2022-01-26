@@ -1,6 +1,5 @@
 package com.example.simpletodo
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 //A bridge that tells recyclerView how to display given data
-class TaskItemAdapter(val listOfItems: List<String>,
-                      val longClickListener: OnLongClickListener) :
+class TaskItemAdapter(
+    private val listOfItems: List<String>,
+    val longClickListener: OnLongClickListener) :
     RecyclerView.Adapter<TaskItemAdapter.ViewHolder>() {
 
     interface OnLongClickListener {
@@ -45,7 +45,7 @@ class TaskItemAdapter(val listOfItems: List<String>,
     // Involves populating data into the item through holder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Get the data model based on position
-        val item = listOfItems.get(position)
+        val item = listOfItems[position]
 
         // Set item views based on your views and data model
         holder.textView.text = item

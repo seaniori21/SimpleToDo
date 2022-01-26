@@ -1,8 +1,8 @@
 package com.example.simpletodo
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         //define what happens when item is long Clicked
         val onLongClickListener = object : TaskItemAdapter.OnLongClickListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onItemLongClicked(position: Int) {
                 //1. Remove item from list
                 listOfTasks.removeAt(position)
@@ -33,12 +34,6 @@ class MainActivity : AppCompatActivity() {
                 saveItems()
             }
         }
-
-//          1.Lets detect when the user clicks add button
-//          findViewById<Button>(R.id.button).setOnClickListener{
-//              //Code here will activate when user clicks button
-//              Log.i("Caren", "User clicked on button")
-//          }
 
         loadItems()
 
@@ -77,14 +72,14 @@ class MainActivity : AppCompatActivity() {
     //save data that user has inputted, by reading and writing from a file
 
     //create a method to get data file we need
-    fun getDataFile() : File {
+    private fun getDataFile() : File {
 
         //every line in the file is going to represent a specific task
         return File(filesDir, "data.txt")
     }
 
     //Load the items by reading every line in the file
-    fun loadItems(){
+    private fun loadItems(){
         try {
             listOfTasks = FileUtils.readLines(getDataFile(), Charset.defaultCharset())
         } catch (ioException: IOException ){
